@@ -35,7 +35,7 @@ func migrateCmd() *cobra.Command {
 func validateCmd() *cobra.Command {
 	return &cobra.Command{
 		Use:   "validate",
-		Short: "Validate keys (format: validate <max keys>)",
+		Short: "Validate keys (format: validate <max keys> <force rewrite?>)",
 		Run: func(_ *cobra.Command, args []string) {
 			logger.Infof("Start validating keys ...")
 			maxKeys := 10000
