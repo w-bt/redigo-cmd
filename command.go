@@ -14,6 +14,7 @@ func newCLI() *cobra.Command {
 	}
 
 	cli.AddCommand(migrateCmd())
+	cli.AddCommand(migrateSpecificCmd())
 	cli.AddCommand(validateCmd())
 	cli.AddCommand(retryCmd())
 
@@ -28,6 +29,18 @@ func migrateCmd() *cobra.Command {
 			logger.Infof("Start migrating keys ...")
 			command.Migrate()
 			logger.Infof("Finish migrating keys ...")
+		},
+	}
+}
+
+func migrateSpecificCmd() *cobra.Command {
+	return &cobra.Command{
+		Use:   "migrate_specific",
+		Short: "Migrate specific redis keys",
+		Run: func(_ *cobra.Command, _ []string) {
+			logger.Infof("Start migrating specific keys ...")
+			command.MigrateSpecific()
+			logger.Infof("Finish migrating specific keys ...")
 		},
 	}
 }

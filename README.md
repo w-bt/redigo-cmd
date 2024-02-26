@@ -1,4 +1,4 @@
-# Benchmark and Optimizing Code
+# REDIS Command
 
 Script for migrating redis key
 
@@ -21,6 +21,21 @@ hostSource     = "localhost:6380"
 ```
 - Go build -a
 - `./redigo-cmd migrate` for migrating redis keys
+
+## Migration Specific Keys
+- Change command/const.go
+```
+sourceUsername = ""
+sourcePassword = ""
+hostDest       = "localhost:6379"
+destUsername   = ""
+destPassword   = ""
+hostSource     = "localhost:6380"
+
+prefixKeys
+```
+- Go build -a
+- `./redigo-cmd migrate_specific` for migrating redis keys
 
 ## Validation
 - Change command/const.go

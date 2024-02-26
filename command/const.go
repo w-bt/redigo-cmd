@@ -11,4 +11,8 @@ var (
 	destUsername   = ""
 	destPassword   = ""
 	hostSource     = "localhost:6380"
+
+	prefixKeys = []string{
+		"production:*",
+	}
 )
